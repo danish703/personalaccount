@@ -1,0 +1,127 @@
+{% extends 'base/master.html' %}
+{% block 'content' %}
+   <div class="container">
+       <h3>Report of the month</h3>
+       <hr/>
+       <div class="row">
+           <div class="col">
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Income</h4>
+                 <h6 class="title">Rs. {{month_income_total}}</h6>
+           </div>
+           </div>
+           <div class="col">
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Expenses</h4>
+               <h6 class="title">Rs.{{month_expenses_total}}</h6>
+           </div>
+           </div>
+           <div class="col">
+           {% if month_saving >= 0 %}
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Saving</h4>
+               <h6 class="title">Rs. {{month_saving}}</h6>
+           </div>
+           {% else %}
+               <div class="card bg-danger topbox">
+                <h4 class="title">Total Lost</h4>
+               <h6 class="title">Rs. {{month_saving}}</h6>
+           </div>
+           {% endif %}
+           </div>
+       </div>
+       <hr/>
+       <div class="row">
+        <div class="col">
+            <div class="card">
+                 <div class="card-header bg-primary text-white">
+                     Recent Income
+                     <a href="#" class="link" style="color:white;float:right;"><i class="fas fa-plus"></i></a>
+                 </div>
+                <div class="card-body">
+                   <table class="table">
+                       <thead class="thead-dark">
+                       <th>Title</th>
+                       <th>Date</th>
+                       <th>Category</th>
+                       <th>Rupes</th>
+                       {% for i in income %}
+                       <tr>
+                           <td>{{i.title}}</td>
+                           <td>{{i.date}}</td>
+                           <td>{{i.category}}</td>
+                           <td>{{i.rupes}}</td>
+                       </tr>
+                       {% endfor %}
+                       </thead>
+                   </table>
+                    <a href="" style="float:right;">View more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                 <div class="card-header bg-primary text-white">
+                     Recent Expenses
+                     <a href="#" class="link" style="color:white;float:right;"><i class="fas fa-plus"></i></a>
+                 </div>
+                <div class="card-body">
+                   <table class="table">
+                       <thead class="thead-dark">
+                       <th>Title</th>
+                       <th>Date</th>
+                       <th>Category</th>
+                       <th>Rupes</th>
+                       {% for i in expenses %}
+                       <tr>
+                           <td>{{i.title}}</td>
+                           <td>{{i.date}}</td>
+                           <td>{{i.category}}</td>
+                           <td>{{i.rupes}}</td>
+                       </tr>
+                       {% endfor %}
+                       </thead>
+                   </table>
+                    <a href="" style="float:right;">View more</a>
+                </div>
+            </div>
+        </div>
+        </div>
+       <hr/>
+       <h3>Report of the year</h3>
+       <hr/>
+       <div class="row">
+           <div class="col">
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Income</h4>
+                 <h6 class="title">Rs.{{month_income_total}}</h6>
+           </div>
+           </div>
+           <div class="col">
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Expenses</h4>
+               <h6 class="title">Rs.{{year_expenses_total}}</h6>
+           </div>
+           </div>
+           <div class="col">
+            {% if year_saving >= 0 %}
+           <div class="card bg-primary topbox">
+                <h4 class="title">Total Saving</h4>
+               <h6 class="title">Rs. {{year_saving}}</h6>
+           </div>
+           {% else %}
+               <div class="card bg-danger topbox">
+                <h4 class="title">Total Lost</h4>
+               <h6 class="title">Rs. {{year_saving}}</h6>
+           </div>
+           {% endif %}
+           </div>
+       </div>
+       <hr/>
+       <hr/>
+   </div>
+
+{% endblock %}
+
+
+

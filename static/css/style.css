@@ -1,0 +1,21 @@
+.navbar{
+ background-color:red !important;
+}
+.navbar-nav>li>a{
+ color:white !important;
+}
+.navbar-brand{
+ color:white !important;
+}
+.link{
+ color:white !important;
+}
+.link>li{
+color:white !important;
+}
+.topbox{
+    padding:20px;
+}
+.title{
+ color:white !important;
+}
